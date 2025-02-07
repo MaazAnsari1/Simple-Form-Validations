@@ -1,4 +1,4 @@
-# Simple Form Validation Web
+# Simple Form Validation
 
 This project is a simple form validation web application built using HTML, Bootstrap, and JavaScript. The form collects user details, validates them, and displays the submitted data in a dynamic table. Users can edit or delete their submitted data directly from the table.
 
@@ -45,4 +45,4 @@ Feel free to make any adjustments as needed. 😊
 To get started, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/MaazAnsari1/Simple-Form-Validation.git
+git clone https://github.com/MaazAnsari1/Simple-Form-Validation-Using-JavaScript.git
