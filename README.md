@@ -36,11 +36,13 @@ You can simply open the index.html file in your preferred web browser to see the
 6. Use the Delete button to remove any row's data.
 7. Click the Reset button to clear all input fields and error messages.
 
+
+Feel free to make any adjustments as needed. 😊
+
+
 ## Installation
 
 To get started, clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/MaazAnsari1/Simple-Form-Validation.git
-
-Feel free to make any adjustments as needed. 😊
