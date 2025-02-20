@@ -11,7 +11,7 @@
 }
 
 .main-container {
-    background: url(/image/background-image.jpg) no-repeat bottom/cover;
+    background: url('/Simple-Form-Validations-Using-JavaScript/image/background-image.jpg') no-repeat bottom/cover;
 }
 
 .form-container {
