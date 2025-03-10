@@ -11,7 +11,7 @@
 }
 
 .main-container {
-    background: url('/Simple-Form-Validations-Using-JavaScript/image/background-image.jpg') no-repeat bottom/cover;
+    background: url('/image/background-image.jpg') no-repeat bottom/cover;
 }
 
 .form-container {
@@ -21,9 +21,25 @@
     padding: 50px;
 }
 
-.container {
-    overflow: scroll;
+.form-label::after,
+.form-check-label::after {
+    content: ' *';
+    color: red;
 }
+
+.table th, .table td {
+    min-width: 100px; 
+}
+
+.container {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    table-layout: auto;
+}
+
 
 @media screen and (max-width: 600px) and (min-width: 480px){
     .form-container {
@@ -69,6 +85,6 @@
     }
 
     .container {
-        width: 220px !important;
+        width: 250px !important;
     }
 }

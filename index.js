@@ -32,7 +32,14 @@ const clearDangerBorder = (id, color) => {
     if (element) {
         element.style.border = `1px solid ${color}`;
     }
-} 
+}
+
+const focusField = (id) => {
+    let element = document.getElementById(id);
+    if (element) {
+        element.focus();
+    }
+}
 
 const fullNameValid = () => {
     const fullName = document.getElementById("fullName").value.trim();
@@ -40,10 +47,12 @@ const fullNameValid = () => {
     if (fullName === "") {
         showError("fullNameError", "Full Name is required!");
         showDangerBorder("fullName", "red");
+        focusField(fullName);
         return false;
     } else if (!fullNameRegex.test(fullName)) {
         showError("fullNameError", "Enter a valid Full Name!");
         showDangerBorder("fullName", "red");
+        focusField("fullName");
         return false;
     } else {
         clearErrors("fullNameError");
@@ -63,6 +72,7 @@ const dobValid = () => {
     if (dob === "") {
         showError("dobError", "Date of Birth is required!");
         showDangerBorder("dob", "red");
+        focusField("dob");
         return false;
     } 
     
@@ -74,19 +84,23 @@ const dobValid = () => {
     if (dobYear < 1900) {
         showError("dobError", "Date of Birth must be after 1900!");
         showDangerBorder("dob", "red");
+        focusField("dob");
         return false;
     } else if (dobYear > currentYear) {
         showError("dobError", `Date of Birth year must be ${currentYear} or before!`);
         showDangerBorder("dob", "red");
+        focusField("dob");
         return false;
     } else if (dobYear === currentYear) {
         if (dobMonth > currentMonth) {
             showError("dobError", `Date of Birth month must be ${currentMonth} or before!`);
             showDangerBorder("dob", "red");
+            focusField("dob");
             return false;
         } else if (dobMonth === currentMonth && dobDay > currentDay) {
             showError("dobError", `Date of Birth day must be ${currentDay} or before!`);
             showDangerBorder("dob", "red");
+            focusField("dob");
             return false;
         }
     }
@@ -104,6 +118,8 @@ const genderValid = () => {
         showError("genderError", "Please select a gender!");
         showDangerBorder("genderM", "red");
         showDangerBorder("genderF", "red");
+        focusField("genderM");
+        focusField("genderF");
         return false;
     } else {
         clearErrors("genderError");
@@ -118,6 +134,7 @@ const addressValid = () => {
     if (address === "") {
         showError("addressError", "Please enter your address!");
         showDangerBorder("address", "red");
+        focusField("address");
         return false;
     } else {
         clearErrors("addressError");
@@ -133,10 +150,12 @@ const phoneNumberValid = () => {
     if (phoneNumber === "") {
         showError("phoneNumberError", "Phone Number is required!");
         showDangerBorder("phoneNumber", "red");
+        focusField("phoneNumber");
         return false;
     } else if (!phoneNumberRegex.test(phoneNumber)) {
         showError("phoneNumberError", "Enter a valid 10-digit phone number!");
         showDangerBorder("phoneNumber", "red");
+        focusField("phoneNumber");
         return false;
     } else {
         clearErrors("phoneNumberError");
@@ -151,10 +170,12 @@ const emailValid = () => {
     if (email === "") {
         showError("emailError", "Email Id is required!");
         showDangerBorder("emailId", "red");
+        focusField("emailId");
         return false;
     } else if (!emailRegex.test(email)) {
         showError("emailError", "Enter a valid email address!");
         showDangerBorder("emailId", "red");
+        focusField("emailId");
         return false;
     } else {
         clearErrors("emailError");
@@ -172,22 +193,27 @@ const passwordValid = () => {
     if (password === "") {
         showError("passwordError", "Password is required!");
         showDangerBorder("password", "red");
+        focusField("password");
         return false;
     } else if (password.length < 8) {
         showError("passwordError", "Password must be at least 8 characters!");
         showDangerBorder("password", "red");
+        focusField("password");
         return false;
     } else if (!passUppercaseRegex.test(password)) {
         showError("passwordError", "Password must contain at least 1 uppercase!");
         showDangerBorder("password", "red");
+        focusField("password");
         return false;
     } else if (!passSpecialCharRegex.test(password)) {
         showError("passwordError", "Password must contain at least 1 Special Character!");
         showDangerBorder("password", "red");
+        focusField("password");
         return false;
     } else if (!passNumberRegex.test(password)) {
         showError("passwordError", "Password must contain at least 1 digit!");
         showDangerBorder("password", "red");
+        focusField("password");
         return false;
     } else {
         clearErrors("passwordError");
@@ -201,6 +227,7 @@ const acceptTCValid = () => {
     if (!acceptTC) {
         showError("acceptTCError", "You must accept the terms and conditions!");
         showDangerBorder("acceptTC", "red");
+        focusField("acceptTC");
         return false;
     } else {
         clearErrors("acceptTCError");
@@ -275,7 +302,7 @@ const addNewRow = () => {
     let table = document.getElementById("dataTable").querySelector("tbody");
     table.innerHTML = "";
 
-    for (let i = 0; i < list.length; i ++) {
+    for (let i = 0; i < list.length; i++) {
         let newRow = table.insertRow();
         newRow.innerHTML = `
             <td>${i + 1}</td>
